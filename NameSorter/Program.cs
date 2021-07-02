@@ -29,7 +29,7 @@ namespace NameSOrter
                    
                      last = names.Last(); // Fetching lastname
                 
-                     lastName += "\n" + last;  // Putting lastnames in new string Lastname Separating them with new line  
+                     lastName += "\n" + last;  // Putting lastnames in new string Lastname Separating them with new line(Entry in a new line)
             }
             
            // Console.WriteLine(lastName); // Printing last names only
@@ -45,7 +45,7 @@ namespace NameSOrter
 
             Console.WriteLine("\n");
             string lastnamenew; // Declaring new string lastnamenew
-            bool results;       // Declaring bool variable results
+            bool results;       // Declaring bool variable results. It will compare two lastnames
             string sortedlist=""; // Initialising string sortedlist with empty space
             
            //Fetching name whose lastname matched with Sorted lastname 
@@ -54,7 +54,7 @@ namespace NameSOrter
                 for (int l = 0; l < text.Length; l++)
                 {
                     string[] newlast = text[l].Split(' ');// Separating actual names with spaces in between 
-                    lastnamenew = newlast.Last(); // fetching lastname of actual names
+                    lastnamenew = newlast.Last(); // fetching lastname of actual names in the array
 
                     results = String.Equals(Sortedlastt[m], lastnamenew);// Comparing Sorted lastname and fetched lastname
                     //Console.WriteLine(results);
@@ -68,10 +68,10 @@ namespace NameSOrter
 
             }
 
-            Console.WriteLine("\n");
+            Console.WriteLine("\n"); // Adding new line
             Console.WriteLine(sortedlist); // Printing Sorted Name list
 
-            string[] sortedlistt = sortedlist.Split('\n'); // Creating a string srray of SortedNames
+            string[] sortedlistt = sortedlist.Split('\n'); // Creating a string array of SortedNames
 
             System.IO.File.WriteAllLines(@"C:\Users\USER\source\repos\NameSorter\sorted_names_list.txt", sortedlistt);// Writing content of Sorted Names to the Text file with the path provided
         }
